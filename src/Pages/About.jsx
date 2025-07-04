@@ -118,14 +118,14 @@ const AboutPage = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2020-06-01");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
 
     return {
-      totalProjects: storedProjects.length,
-      totalCertificates: storedCertificates.length,
+      totalProjects: storedProjects.length || 3,
+      totalCertificates: storedCertificates.length || 8,
       YearExperience: experience
     };
   }, []);
@@ -161,7 +161,7 @@ const AboutPage = () => {
       color: "from-[#6366f1] to-[#a855f7]",
       value: totalProjects,
       label: "Total Projects",
-      description: "Innovative web solutions crafted",
+      description: "Innovative solutions crafted",
       animation: "fade-right",
     },
     {
@@ -205,7 +205,7 @@ const AboutPage = () => {
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Eki Zulfar Rachman
+                Ritesh Raj Arul Selvan
               </span>
             </h2>
             
@@ -214,61 +214,98 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             Seorang lulusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki ketertarikan besar dalam pengembangan Front-End. Saya berfokus pada menciptakan pengalaman digital yang menarik dan selalu berusaha memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
+             As a passionate robotics enthusiast and high school student at Rochester High School in Rochester, Michigan, I've been actively involved in FIRST Robotics Competition (FRC) for several years. This experience has allowed me to develop strong foundations in programming languages like Python, C++, and Java, as well as gain hands-on experience in mechanical design, project management, and problem-solving. Currently, I'm particularly excited about delving deeper into artificial intelligence and machine learning, finding the potential of these fields incredibly fascinating as I work on developing intelligent systems that can adapt, learn, and reason like humans.
             </p>
 
+            <div className="space-y-4 text-gray-300" data-aos="fade-right" data-aos-duration="1700">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>🤖 FIRST Robotics Competition (FRC) Participant</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span>⚡ Passionate about AI, Machine Learning & Robotics</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>🌐 Full-Stack Developer & Open Source Contributor</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>🔐 Cybersecurity & Ethical Hacking Certified</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                <span>📱 Mobile App Developer (Flutter & Dart)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <span>🎨 VFX Artist & Creative Designer</span>
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20" data-aos="fade-right" data-aos-duration="1800">
+              <h3 className="text-lg font-semibold text-white mb-4">💭 Fun Facts About Me</h3>
+              <div className="space-y-3 text-gray-300">
+                <p>☕ I dream in Python, C++, and Java</p>
+                <p>🤖 Building ScoutOps Suite for FRC teams</p>
+                <p>📚 Working on Programmer's Handbook & Project Pyintel</p>
+                <p>🏆 Passionate about creating intelligent systems</p>
+                <p>🔐 Certified in Cybersecurity & Ethical Hacking</p>
+                <p>🌐 SQL and Database Management enthusiast</p>
+                <p>📱 Skilled in Flutter & Dart for mobile development</p>
+                <p>🎮 VFX Artist and creative problem solver</p>
+              </div>
+            </div>
+            
+            <div className="text-gray-300 mt-6" data-aos="fade-right" data-aos-duration="2000">
+              <p>🌟 I believe in the power of technology to change the world</p>
+              <p>🤝 Open to collaboration and networking opportunities</p>
+              <p>💡 Always eager to learn new technologies and solve complex problems</p>
+            </div>
+            
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
-              <button 
-                data-aos="fade-up"
-                data-aos-duration="800"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
-              >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
-              </button>
+                <button 
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  className="group relative w-full lg:w-auto overflow-hidden rounded-2xl"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                  <div className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] px-8 py-3 rounded-2xl text-white font-semibold flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                    <FileText className="w-5 h-5" />
+                    Download Resume
+                  </div>
+                </button>
               </a>
-              <a href="#Portofolio" className="w-full lg:w-auto">
-              <button 
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
-              >
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
-              </button>
+              
+              <a href="https://www.linkedin.com/in/riteshraj/" className="w-full lg:w-auto">
+                <button 
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  className="group relative w-full lg:w-auto overflow-hidden rounded-2xl"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#6366f1] blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                  <div className="relative bg-gradient-to-r from-[#a855f7] to-[#6366f1] px-8 py-3 rounded-2xl text-white font-semibold flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                    <UserCheck className="w-5 h-5" />
+                    Let's Connect
+                  </div>
+                </button>
               </a>
             </div>
           </div>
 
           <ProfileImage />
         </div>
-
-        <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
-            {statsData.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
-            ))}
-          </div>
-        </a>
       </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-        @keyframes spin-slower {
-          to { transform: rotate(360deg); }
-        }
-        .animate-bounce-slow {
-          animation: bounce 3s infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse 3s infinite;
-        }
-        .animate-spin-slower {
-          animation: spin-slower 8s linear infinite;
-        }
-      `}</style>
+      <div className="mt-20 sm:mt-24 lg:mt-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {statsData.map((stat, index) => (
+            <StatCard key={index} {...stat} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

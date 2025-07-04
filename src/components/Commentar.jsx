@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { MessageCircle, UserCircle2, Loader2, AlertCircle, Send, ImagePlus, X, Pin } from 'lucide-react';
+import { MessageCircle, UserCircle2, Loader2, AlertCircle, Send, ImagePlus, X, Pin, Github, Code2, Sparkles } from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { supabase } from '../supabase-config-comment';

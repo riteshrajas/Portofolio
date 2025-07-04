@@ -3,6 +3,12 @@ import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucid
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import AnimatedIntro from "../components/AnimatedIntro";
+import TechUniverse from "../components/TechUniverse";
+import GitHubStats from "../components/GitHubStats";
+import GoalsAchievements from "../components/GoalsAchievements";
+import CodingActivity from "../components/CodingActivity";
+import DailyInspiration from "../components/DailyInspiration";
 
 // Memoized Components
 const StatusBadge = memo(() => (
@@ -25,14 +31,14 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Frontend
+          High School
         </span>
       </span>
       <br />
       <span className="relative inline-block mt-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-          Developer
+          Robotics Student
         </span>
       </span>
     </h1>
@@ -77,12 +83,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const WORDS = ["High School Student", "Robotics Enthusiast", "AI & ML Explorer", "FRC Participant", "Cybersecurity Certified", "Mobile App Developer"];
+const TECH_STACK = ["Python", "Java", "JavaScript", "C++", "Flutter", "Dart", "SQL"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id" }
+  { icon: Github, link: "https://github.com/riteshrajas" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/riteshraj/" },
+  { icon: Instagram, link: "https://www.instagram.com/ritesh_raj/" }
 ];
 
 const Home = () => {
@@ -239,6 +245,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      {/* New Enhanced Sections */}
+      <AnimatedIntro />
+      <TechUniverse />
+      <GitHubStats />
+      <CodingActivity />
+      <GoalsAchievements />
+      <DailyInspiration />
     </div>
   );
 };
