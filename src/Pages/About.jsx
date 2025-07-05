@@ -203,7 +203,7 @@ const AboutPage = () => {
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Ritesh Raj Arul Selvan
+                Ritesh Raj 
               </span>
             </h2>
             
@@ -242,19 +242,7 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20" data-aos="fade-right" data-aos-duration="1800">
-              <h3 className="text-lg font-semibold text-white mb-4">🏆 Certifications & Skills</h3>
-              <div className="space-y-3 text-gray-300">
-                <p>🔐 NIKISTIAN Master Cyber Security (Aug 2024)</p>
-                <p>☕ HackerRank: Python, Java & JavaScript Certified</p>
-                <p>🌐 freeCodeCamp Responsive Web Design</p>
-                <p>🗄️ SQL and Relational Databases Expert (Jun 2025)</p>
-                <p>📱 Altair IoT Certified Developer (Jun 2024)</p>
-                <p>🎨 Adobe Photoshop & Creative Skills</p>
-                <p>🤖 Building ScoutOps Suite for FRC teams</p>
-                <p>📚 Working on Programmer's Handbook & Project Pyintel</p>
-              </div>
-            </div>
+          
             
             <div className="text-gray-300 mt-6" data-aos="fade-right" data-aos-duration="2000">
               <p>🌟 I believe in the power of technology to change the world</p>
@@ -277,7 +265,7 @@ const AboutPage = () => {
                 </button>
               </a>
               
-              <a href="https://www.linkedin.com/in/riteshraj/" className="w-full lg:w-auto">
+              <a href="https://www.linkedin.com/in/riteshrajas/" className="w-full lg:w-auto">
                 <button 
                   data-aos="fade-up"
                   data-aos-duration="1000"
