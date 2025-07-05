@@ -4,7 +4,19 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 // Memoized Components
-const Header = memo(() => (
+const Header = me            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20" data-aos="fade-right" data-aos-duration="1800">
+              <h3 className="text-lg font-semibold text-white mb-4">🏆 Certifications & Skills</h3>
+              <div className="space-y-3 text-gray-300">
+                <p>🔐 NIKISTIAN Master Cyber Security (Aug 2024)</p>
+                <p>☕ HackerRank: Python, Java & JavaScript Certified</p>
+                <p>🌐 freeCodeCamp Responsive Web Design</p>
+                <p>🗄️ SQL and Relational Databases Expert (Jun 2025)</p>
+                <p>📱 Altair IoT Certified Developer (Jun 2024)</p>
+                <p>🎨 Adobe Photoshop & Creative Skills</p>
+                <p>🤖 Building ScoutOps Suite for FRC teams</p>
+                <p>📚 Working on Programmer's Handbook & Project Pyintel</p>
+              </div>
+            </div>(
   <div className="text-center lg:mb-8 mb-2 px-[5%]">
     <div className="inline-block relative group">
       <h2 
@@ -37,38 +49,40 @@ const ProfileImage = memo(() => (
       {/* Optimized gradient backgrounds with reduced complexity for mobile */}
       <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
         <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
-      </div>
-      
-      <div className="absolute -inset-3 opacity-30 z-10 block sm:hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-lg" />
+        <div className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50" />
       </div>
 
-      <div className="relative z-20 overflow-hidden rounded-full border-4 border-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl">
-        <img
-          src="/Photo.jpg"
-          alt="Ritesh Raj Arul Selvan"
-          className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      </div>
+      <div className="relative">
+        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
+          <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
+          
+          {/* Optimized overlay effects - disabled on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
+          
+          <img
+            src="/Photo.jpg"
+            alt="Profile"
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+            loading="lazy"
+          />
 
-      <div className="absolute -bottom-4 -right-4 z-30 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full p-3 shadow-lg animate-pulse">
-        <Sparkles className="w-6 h-6 text-white" />
+          {/* Advanced hover effects - desktop only */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
+            <div className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 ));
 
 const StatCard = memo(({ icon: Icon, color, value, label, description, animation }) => (
-  <div className="relative group cursor-pointer">
-    <div 
-      className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 group-hover:scale-105 overflow-hidden"
-      data-aos={animation}
-      data-aos-duration="1200"
-      data-aos-anchor-placement="top-bottom"
-    >
+  <div data-aos={animation} data-aos-duration={1300} className="relative group">
+    <div className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
       
       <div className="flex items-center justify-between mb-4">
@@ -116,14 +130,14 @@ const AboutPage = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
-    const startDate = new Date("2020-06-01");
+    const startDate = new Date("2021-11-06");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
 
     return {
-      totalProjects: storedProjects.length || 3,
-      totalCertificates: storedCertificates.length || 8,
+      totalProjects: storedProjects.length,
+      totalCertificates: storedCertificates.length,
       YearExperience: experience
     };
   }, []);
@@ -159,7 +173,7 @@ const AboutPage = () => {
       color: "from-[#6366f1] to-[#a855f7]",
       value: totalProjects,
       label: "Total Projects",
-      description: "Innovative solutions crafted",
+      description: "Innovative web solutions crafted",
       animation: "fade-right",
     },
     {
@@ -203,7 +217,7 @@ const AboutPage = () => {
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Ritesh Raj Arul Selvan
+                Ritesh Raj
               </span>
             </h2>
             
@@ -212,7 +226,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             As a passionate robotics enthusiast and high school student at Rochester High School in Rochester, Michigan, I've been actively involved in FIRST Robotics Competition (FRC) for several years. This experience has allowed me to develop strong foundations in programming languages like Python, C++, and Java, as well as gain hands-on experience in mechanical design, project management, and problem-solving. Currently, I'm particularly excited about delving deeper into artificial intelligence, machine learning, and cybersecurity, finding these fields incredibly fascinating as I work on developing intelligent systems and secure applications.
+             A passionate robotics enthusiast and high school student at Rochester High School in Rochester, Michigan. I've been actively involved in FIRST Robotics Competition (FRC) for several years, developing strong foundations in programming languages like Python, C++, and Java, as well as gaining hands-on experience in mechanical design, project management, and problem-solving. Currently, I'm particularly excited about delving deeper into artificial intelligence, machine learning, and cybersecurity, finding these fields incredibly fascinating as I work on developing intelligent systems and secure applications.
             </p>
 
             <div className="space-y-4 text-gray-300" data-aos="fade-right" data-aos-duration="1700">
@@ -243,66 +257,50 @@ const AboutPage = () => {
             </div>
 
             <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20" data-aos="fade-right" data-aos-duration="1800">
-              <h3 className="text-lg font-semibold text-white mb-4">🏆 Certifications & Skills</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">💭 Fun Facts About Me</h3>
               <div className="space-y-3 text-gray-300">
-                <p>🔐 NIKISTIAN Master Cyber Security (Aug 2024)</p>
-                <p>☕ HackerRank: Python, Java & JavaScript Certified</p>
-                <p>🌐 freeCodeCamp Responsive Web Design</p>
-                <p>🗄️ SQL and Relational Databases Expert (Jun 2025)</p>
-                <p>📱 Altair IoT Certified Developer (Jun 2024)</p>
-                <p>🎨 Adobe Photoshop & Creative Skills</p>
-                <p>🤖 Building ScoutOps Suite for FRC teams</p>
-                <p>📚 Working on Programmer's Handbook & Project Pyintel</p>
+                <p>☕ I dream in Python and debug with coffee</p>
+                <p>🤖 Building AI-powered robots is my passion</p>
+                <p>� 2024 Goals: Contribute to 10+ Open Source projects</p>
+                <p>� Always ready to build the future together</p>
               </div>
             </div>
-            
             <div className="text-gray-300 mt-6" data-aos="fade-right" data-aos-duration="2000">
               <p>🌟 I believe in the power of technology to change the world</p>
-              <p>🤝 Open to collaboration and networking opportunities</p>
-              <p>💡 Always eager to learn new technologies and solve complex problems</p>
+
             </div>
-            
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
-                <button 
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  className="group relative w-full lg:w-auto overflow-hidden rounded-2xl"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] px-8 py-3 rounded-2xl text-white font-semibold flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
-                    <FileText className="w-5 h-5" />
-                    Download Resume
-                  </div>
-                </button>
+              <button 
+                data-aos="fade-up"
+                data-aos-duration="800"
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
+              >
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+              </button>
               </a>
-              
-              <a href="https://www.linkedin.com/in/riteshraj/" className="w-full lg:w-auto">
-                <button 
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  className="group relative w-full lg:w-auto overflow-hidden rounded-2xl"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#6366f1] blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-r from-[#a855f7] to-[#6366f1] px-8 py-3 rounded-2xl text-white font-semibold flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
-                    <UserCheck className="w-5 h-5" />
-                    Let's Connect
-                  </div>
-                </button>
+              <a href="#Portofolio" className="w-full lg:w-auto">
+              <button 
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
+              >
+                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
+              </button>
               </a>
             </div>
           </div>
 
           <ProfileImage />
         </div>
-      </div>
 
-      <div className="mt-20 sm:mt-24 lg:mt-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {statsData.map((stat, index) => (
-            <StatCard key={index} {...stat} />
-          ))}
-        </div>
+        <a href="#Portofolio">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+            {statsData.map((stat) => (
+              <StatCard key={stat.label} {...stat} />
+            ))}
+          </div>
+        </a>
       </div>
     </div>
   );

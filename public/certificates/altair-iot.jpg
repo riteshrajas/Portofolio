@@ -1,0 +1,52 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  
+  <!-- Border decoration -->
+  <rect x="10" y="10" width="380" height="280" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <rect x="20" y="20" width="360" height="260" fill="none" stroke="#4ade80" stroke-width="1"/>
+  
+  <!-- Certificate Title -->
+  <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#14532d">
+    ALTAIR IOT CERTIFIED
+  </text>
+  
+  <!-- Issuer -->
+  <text x="200" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#166534">
+    Altair
+  </text>
+  
+  <!-- IoT Icon -->
+  <circle cx="190" cy="85" r="8" fill="#16a34a" opacity="0.3"/>
+  <circle cx="210" cy="85" r="8" fill="#16a34a" opacity="0.3"/>
+  <circle cx="200" cy="100" r="8" fill="#16a34a" opacity="0.3"/>
+  <line x1="190" y1="85" x2="210" y2="85" stroke="#16a34a" stroke-width="2"/>
+  <line x1="190" y1="85" x2="200" y2="100" stroke="#16a34a" stroke-width="2"/>
+  <line x1="210" y1="85" x2="200" y2="100" stroke="#16a34a" stroke-width="2"/>
+  
+  <!-- Content Area -->
+  <rect x="50" y="130" width="300" height="80" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+  <text x="200" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#14532d">
+    Internet of Things Certification
+  </text>
+  <text x="200" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#166534">
+    • IoT Device Management
+  </text>
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#166534">
+    • Smart Systems Integration
+  </text>
+  <text x="200" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#166534">
+    • Device Connectivity Solutions
+  </text>
+  
+  <!-- Date -->
+  <text x="200" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#14532d">
+    June 2024
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="3" fill="#16a34a" opacity="0.5"/>
+  <circle cx="350" cy="50" r="3" fill="#16a34a" opacity="0.5"/>
+  <circle cx="50" cy="250" r="3" fill="#16a34a" opacity="0.5"/>
+  <circle cx="350" cy="250" r="3" fill="#16a34a" opacity="0.5"/>
+</svg>

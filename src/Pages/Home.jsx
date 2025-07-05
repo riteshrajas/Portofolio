@@ -83,8 +83,8 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Robotics/Engineering Student", "AI & ML Enthusiast", "Full-Stack Developer"];
-const TECH_STACK = ["Python", "JavaScript", "React", "TensorFlow"];
+const WORDS = ["High School Student", "Robotics Enthusiast", "AI & ML Explorer", "FRC Participant", "Cybersecurity Certified", "Mobile App Developer"];
+const TECH_STACK = ["Python", "Java", "JavaScript", "C++", "Flutter", "Dart", "SQL"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/riteshrajas" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/riteshraj/" },

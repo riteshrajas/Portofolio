@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import { db, collection } from "../firebase";
 import { getDocs } from "firebase/firestore";
 import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -13,7 +12,7 @@ import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Certificate from "../components/Certificate";
+import Certificate from "../components/Certificate_enhanced";
 import { Code, Award, Boxes } from "lucide-react";
 
 // Separate ShowMore/ShowLess button component
@@ -115,6 +114,90 @@ const techStacks = [
   { icon: "SweetAlert.svg", language: "SweetAlert2" },
 ];
 
+// Local certificates data based on your actual certifications
+const localCertificates = [
+  {
+    id: "sql-db-2025",
+    title: "SQL and Relational Databases 101",
+    issuer: "Cognitive Class",
+    issueDate: "June 2025",
+    credentialId: "7e27ca07c7b0463b8e4adf8a36fbbca9",
+    Img: "/certificates/sql-databases.jpg",
+    skills: ["SQL", "Database Management", "Data Analysis"],
+    description: "Comprehensive course covering SQL fundamentals, database design, and relational database concepts."
+  },
+  {
+    id: "cyber-security-2024",
+    title: "NIKISTIAN Master Cyber Security",
+    issuer: "NIKISTIAN MEDIA PRIVATE LIMITED",
+    issueDate: "August 2024",
+    credentialId: "cyber-security-2024",
+    Img: "/certificates/cyber-security.jpg",
+    skills: ["Ethical Hacking", "Security Onion", "Cybersecurity"],
+    description: "Advanced cybersecurity training covering ethical hacking, security tools, and threat detection."
+  },
+  {
+    id: "altair-iot-2024",
+    title: "Altair IoT Certified",
+    issuer: "Altair",
+    issueDate: "June 2024",
+    credentialId: "altair-iot-2024",
+    Img: "/certificates/altair-iot.jpg",
+    skills: ["Internet of Things (IoT)", "Smart Systems", "Device Connectivity"],
+    description: "Certification in IoT technologies, smart systems integration, and device connectivity solutions."
+  },
+  {
+    id: "adobe-skills-2024",
+    title: "Certifying Adobe Skills in Your Classroom",
+    issuer: "Adobe Education",
+    issueDate: "June 2024",
+    credentialId: "69f50fe6-d1e6-4770-ab9a-8e87e88e53f5",
+    Img: "/certificates/adobe-skills.jpg",
+    skills: ["Adobe Photoshop", "Creative Design", "Digital Arts"],
+    description: "Professional certification in Adobe Creative Suite, focusing on design principles and digital content creation."
+  },
+  {
+    id: "java-basics-2024",
+    title: "Java Basics",
+    issuer: "HackerRank",
+    issueDate: "June 2024",
+    credentialId: "93f495714d71",
+    Img: "/certificates/java-basics.jpg",
+    skills: ["Java Programming", "Object-Oriented Programming", "Software Development"],
+    description: "Fundamental Java programming concepts including OOP principles, data structures, and algorithms."
+  },
+  {
+    id: "responsive-web-2024",
+    title: "Responsive Web Design Certification",
+    issuer: "freeCodeCamp",
+    issueDate: "June 2024",
+    credentialId: "freecodecamp-rwd-2024",
+    Img: "/certificates/responsive-web.jpg",
+    skills: ["Responsive Web Design", "HTML5", "CSS3", "Web Development"],
+    description: "Comprehensive web development certification covering responsive design, HTML5, CSS3, and modern web standards."
+  },
+  {
+    id: "javascript-basic-2023",
+    title: "JavaScript (Basic)",
+    issuer: "HackerRank",
+    issueDate: "June 2023",
+    credentialId: "54bf40507c00",
+    Img: "/certificates/javascript-basic.jpg",
+    skills: ["JavaScript", "Programming", "Web Development"],
+    description: "Essential JavaScript programming skills including DOM manipulation, event handling, and modern JS features."
+  },
+  {
+    id: "python-basic-2023",
+    title: "Python (Basic) Certificate",
+    issuer: "HackerRank",
+    issueDate: "May 2023",
+    credentialId: "4d0940ad32d5",
+    Img: "/certificates/python-basic.jpg",
+    skills: ["Python Programming", "Programming Fundamentals", "Software Development"],
+    description: "Foundation Python programming covering syntax, data structures, functions, and basic algorithms."
+  }
+];
+
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
@@ -151,13 +234,25 @@ export default function FullWidthTabs() {
       const certificateData = certificateSnapshot.docs.map((doc) => doc.data());
 
       setProjects(projectData);
-      setCertificates(certificateData);
+      setCertificates(certificateData.length > 0 ? certificateData : localCertificates);
 
       // Store in localStorage
       localStorage.setItem("projects", JSON.stringify(projectData));
-      localStorage.setItem("certificates", JSON.stringify(certificateData));
+      localStorage.setItem("certificates", JSON.stringify(certificateData.length > 0 ? certificateData : localCertificates));
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching data from Firebase, using local certificates:", error);
+      
+      // Fallback to local data if Firebase fails
+      const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+      const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
+      
+      setProjects(storedProjects);
+      setCertificates(storedCertificates.length > 0 ? storedCertificates : localCertificates);
+      
+      // Store local certificates in localStorage if none exist
+      if (storedCertificates.length === 0) {
+        localStorage.setItem("certificates", JSON.stringify(localCertificates));
+      }
     }
   }, []);
 
@@ -289,11 +384,7 @@ export default function FullWidthTabs() {
           </Tabs>
         </AppBar>
 
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={value}
-          onChangeIndex={setValue}
-        >
+        <div style={{ padding: '20px 0' }}>
           <TabPanel value={value} index={0} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
@@ -329,11 +420,11 @@ export default function FullWidthTabs() {
               <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
                 {displayedCertificates.map((certificate, index) => (
                   <div
-                    key={index}
+                    key={certificate.id || index}
                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
-                    <Certificate ImgSertif={certificate.Img} />
+                    <Certificate ImgSertif={certificate.Img} certificate={certificate} />
                   </div>
                 ))}
               </div>
@@ -363,7 +454,7 @@ export default function FullWidthTabs() {
               </div>
             </div>
           </TabPanel>
-        </SwipeableViews>
+        </div>
       </Box>
     </div>
   );
