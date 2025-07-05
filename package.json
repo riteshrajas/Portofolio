@@ -4,15 +4,13 @@
   "version": "0.0.0",
   "type": "module",  "scripts": {
     "dev": "vite",
-    "prebuild": "npm ci --legacy-peer-deps",
+    "prebuild": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
     "build": "vite build",
-    "build:cf": "npm ci --legacy-peer-deps && npm run build",
+    "build:cf": "npm install --legacy-peer-deps && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.13.0",
-    "@rollup/rollup-linux-x64-musl": "^4.13.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@headlessui/react": "^2.2.0",
