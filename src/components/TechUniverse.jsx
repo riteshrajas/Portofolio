@@ -1,42 +1,37 @@
 import React, { useState, useEffect, memo } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Server, Smartphone, Cloud, Settings, Globe, Layers, Cpu, Package, Zap, Monitor } from 'lucide-react';
+import { Code, Settings, Globe, Layers, Cpu, Monitor } from 'lucide-react';
 
 const TECH_CATEGORIES = {
-  "Core Languages": {
+  "Programming Languages": {
     icon: Code,
     color: "from-blue-500 to-purple-600",
-    techs: ["JavaScript", "Python", "Java", "C++", "TypeScript", "HTML5", "CSS3"]
+    techs: ["Python", "Java", "C++", "JavaScript", "C", "Arduino IDE", "HTML5", "CSS3", "SQL", "Bash"]
+  },
+  "Robotics & Electronics": {
+    icon: Cpu,
+    color: "from-orange-500 to-red-500",
+    techs: ["Arduino", "Raspberry Pi", "ESP32", "Sensors & Actuators", "Circuit Design", "PCB Design", "Motor Control", "Microcontrollers"]
+  },
+  "AI & Machine Learning": {
+    icon: Layers,
+    color: "from-purple-500 to-pink-500",
+    techs: ["Pyintel AI", "TensorFlow", "PyTorch", "OpenCV", "Natural Language Processing", "Computer Vision", "Neural Networks", "Deep Learning"]
   },
   "Web Development": {
     icon: Globe,
     color: "from-green-500 to-blue-500",
-    techs: ["React", "Next.js", "Vue.js", "Angular", "Node.js", "Express", "Tailwind CSS", "Bootstrap"]
-  },
-  "AI & Machine Learning": {
-    icon: Cpu,
-    color: "from-purple-500 to-pink-500",
-    techs: ["TensorFlow", "PyTorch", "Keras", "OpenCV", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"]
-  },
-  "Mobile & Cross-Platform": {
-    icon: Smartphone,
-    color: "from-orange-500 to-red-500",
-    techs: ["React Native", "Flutter", "Kotlin", "Swift", "Ionic", "Xamarin"]
-  },
-  "Cloud & DevOps": {
-    icon: Cloud,
-    color: "from-cyan-500 to-blue-600",
-    techs: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Jenkins", "GitLab CI/CD", "Terraform"]
-  },
-  "Databases": {
-    icon: Database,
-    color: "from-yellow-500 to-orange-500",
-    techs: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase", "Supabase", "DynamoDB"]
+    techs: ["React", "Node.js", "HTML5", "CSS3", "JavaScript", "Bootstrap", "Express.js"]
   },
   "Development Tools": {
     icon: Settings,
     color: "from-indigo-500 to-purple-500",
-    techs: ["VS Code", "Git", "GitHub", "Figma", "Postman", "Webpack", "Vite", "ESLint"]
+    techs: ["VS Code", "Git", "GitHub", "PlatformIO", "Jupyter Notebook", "Linux", "Command Line", "Debugging Tools", "CI/CD", "Docker", "Version Control", "API Development", "WebSockets", "RESTful Services"]
+  },
+  "Leadership & Teaching": {
+    icon: Monitor,
+    color: "from-cyan-500 to-blue-600",
+    techs: ["Club Founding", "Team Leadership", "Technical Co-Captain", "Project Management", "Workshop Facilitation", "Curriculum Development"]
   }
 };
 
@@ -83,7 +78,7 @@ const CategorySection = memo(({ category, data, isVisible }) => {
 });
 
 const TechUniverse = () => {
-  const [activeCategory, setActiveCategory] = useState("Core Languages");
+  const [activeCategory, setActiveCategory] = useState("Programming Languages");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -113,10 +108,10 @@ const TechUniverse = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-4">
-            🛠️ My Tech Universe
+            🛠️ My Tech Arsenal
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Explore the technologies and tools I use to build amazing digital experiences
+            From robotics engineering to AI development - the technologies powering my innovations
           </p>
         </motion.div>
 

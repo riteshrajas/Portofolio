@@ -1,9 +1,11 @@
+/* eslint-disable react/display-name */
 import React, { useEffect, memo, useMemo } from "react"
 import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 // Memoized Components
+
 const Header = memo(() => (
   <div className="text-center lg:mb-8 mb-2 px-[5%]">
     <div className="inline-block relative group">
@@ -21,7 +23,7 @@ const Header = memo(() => (
       data-aos-duration="800"
     >
       <Sparkles className="w-5 h-5 text-purple-400" />
-      Transforming ideas into digital experiences
+      Building the future through code & compassion
       <Sparkles className="w-5 h-5 text-purple-400" />
     </p>
   </div>
@@ -196,7 +198,7 @@ const AboutPage = () => {
               data-aos-duration="1000"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                Hello, I'm
+                Hi, I&apos;m
               </span>
               <span 
                 className="block mt-2 text-gray-200"
@@ -212,42 +214,16 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             As a passionate robotics enthusiast and high school student at Rochester High School in Rochester, Michigan, I've been actively involved in FIRST Robotics Competition (FRC) for several years. This experience has allowed me to develop strong foundations in programming languages like Python, C++, and Java, as well as gain hands-on experience in mechanical design, project management, and problem-solving. Currently, I'm particularly excited about delving deeper into artificial intelligence, machine learning, and cybersecurity, finding these fields incredibly fascinating as I work on developing intelligent systems and secure applications.
+              Born in India and now a high school senior in the United States, I&apos;ve dedicated my journey to robotics, AI innovation, and empowering others through technology. I&apos;ve learned the value of hard work and resilience while pursuing my passion for creating meaningful impact. I founded both the Computer Science Club and Engineering Club at my school, where I mentor peers in programming and robotics. My proudest creation is Pyintel, an AI assistant I built from scratch, which represents my commitment to open-source development and helping others learn. I&apos;m driven by my parents&apos; sacrifices and my vision to one day own a tech company that serves humanity with empathy and innovation.
             </p>
 
-            <div className="space-y-4 text-gray-300" data-aos="fade-right" data-aos-duration="1700">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>🤖 FIRST Robotics Competition (FRC) Participant</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                <span>⚡ Passionate about AI, Machine Learning & Robotics</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>🌐 Full-Stack Developer & Open Source Contributor</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                <span>🔐 Cybersecurity & Ethical Hacking Certified</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                <span>📱 Mobile App Developer (Flutter & Dart)</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                <span>🎨 VFX Artist & Creative Designer</span>
-              </div>
-            </div>
-
+            
           
             
             <div className="text-gray-300 mt-6" data-aos="fade-right" data-aos-duration="2000">
-              <p>🌟 I believe in the power of technology to change the world</p>
-              <p>🤝 Open to collaboration and networking opportunities</p>
-              <p>💡 Always eager to learn new technologies and solve complex problems</p>
+              <p>💝 Driven by my parents&apos; sacrifices to become the best version of myself</p>
+              <p>🤝 Leading through empathy, not authority - creating positive team experiences</p>
+              <p>💡 Teaching and mentoring others brings me the greatest joy</p>
             </div>
             
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
@@ -274,7 +250,7 @@ const AboutPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#6366f1] blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                   <div className="relative bg-gradient-to-r from-[#a855f7] to-[#6366f1] px-8 py-3 rounded-2xl text-white font-semibold flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
                     <UserCheck className="w-5 h-5" />
-                    Let's Connect
+                    Let&apos;s Connect
                   </div>
                 </button>
               </a>

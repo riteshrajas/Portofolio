@@ -4,48 +4,55 @@ import { Code, Brain, Zap, Coffee, Terminal, Lightbulb } from 'lucide-react';
 
 const CodeBlock = memo(() => {
   const [currentLine, setCurrentLine] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
   
   const codeLines = [
-    'const eki = {',
-    '  name: "Eki Zulfar Rachman",',
-    '  location: "Indonesia 🇮🇩",',
-    '  education: "Network & Telecommunications",',
-    '  role: "Frontend Developer",',
+    'const ritesh = {',
+    '  name: "Ritesh Raj",',
+    '  origin: "Born in India 🇮🇳, Living in USA 🇺🇸",',
+    '  education: "High School Senior",',
+    '  role: "Robotics Engineer & AI Creator",',
     '  ',
     '  passions: [',
-    '    "💻 Web Development",',
-    '    "🎨 UI/UX Design",',
-    '    "📱 Mobile Apps",',
-    '    "🚀 Innovation"',
+    '    "🤖 Robotics & Electronics",',
+    '    "🧠 AI Development (Pyintel)",',
+    '    "👨‍🏫 Teaching & Mentoring",',
+    '    "🚀 Community Impact"',
     '  ],',
     '  ',
-    '  currentlyLearning: [',
-    '    "Advanced React Patterns",',
-    '    "Next.js 14",',
-    '    "TypeScript",',
-    '    "System Design"',
+    '  leadership: [',
+    '    "Founded CS Club",',
+    '    "Founded Engineering Club",',
+    '    "Robotics Team Leader",',
     '  ],',
     '  ',
-    '  goals2024: [',
-    '    "Build 10+ Amazing Projects",',
-    '    "Master Full-Stack Development",',
-    '    "Contribute to Open Source",',
-    '    "Launch SaaS Product"',
+    '  goals: [',
+    '    "College Success",',
+    '    "Expand Open Source Impact",',
+    '    "Launch Tech Company"',
     '  ],',
     '  ',
-    '  funFact: "I debug with coffee ☕"',
+    '  motto: "Building the future through code & compassion 💝"',
     '};',
     '',
-    'console.log("Let\'s build something amazing! 🚀");'
+    'console.log("Ready to inspire and innovate! 🌟");'
   ];
 
   useEffect(() => {
+    if (isComplete) return;
+
     const interval = setInterval(() => {
-      setCurrentLine(prev => (prev + 1) % codeLines.length);
+      setCurrentLine(prev => {
+        if (prev >= codeLines.length - 1) {
+          setIsComplete(true);
+          return prev;
+        }
+        return prev + 1;
+      });
     }, 150);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isComplete, codeLines.length]);
 
   return (
     <motion.div
@@ -84,7 +91,7 @@ const CodeBlock = memo(() => {
             }`}>
               {line}
             </span>
-            {index === currentLine && (
+            {index === currentLine && !isComplete && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1, 0] }}
@@ -166,6 +173,13 @@ const AnimatedIntro = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const skills = [
+    { name: 'Python', level: 'Expert' },
+    { name: 'Java', level: 'Expert' },
+    { name: 'C++', level: 'Proficient' },
+    { name: 'Electronics', level: 'Expert' },
+  ];
+
   return (
     <div className="w-full py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Floating Icons */}
@@ -188,18 +202,18 @@ const AnimatedIntro = () => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-white/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-white">Available for opportunities</span>
+                <span className="text-sm font-medium text-white">Gates Scholarship Applicant</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Meet the Developer
+                Meet Ritesh Raj
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                  Behind the Code
+                  Robotics & AI Innovator
                 </span>
               </h1>
               
               <p className="text-xl text-gray-400 leading-relaxed">
-                Transforming ideas into elegant digital solutions with creativity and precision
+                Empowering others through robotics, AI innovation, and compassionate leadership
               </p>
             </motion.div>
 
@@ -212,9 +226,9 @@ const AnimatedIntro = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="grid grid-cols-3 gap-8 bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20"
             >
-              <StatCounter value="50" label="Projects Built" delay={0.8} />
-              <StatCounter value="15" label="Technologies" delay={1.2} />
-              <StatCounter value="3" label="Years Experience" delay={1.6} />
+              <StatCounter value="20" label="Projects Built" delay={0.8} />
+              <StatCounter value="7" label="Technologies" delay={1.2} />
+              <StatCounter value="4" label="Years Experience" delay={1.6} />
             </motion.div>
           </div>
 
@@ -233,11 +247,11 @@ const AnimatedIntro = () => {
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                      <Code className="w-8 h-8 text-white" />
+                      <Brain className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">Frontend Developer</h3>
-                      <p className="text-gray-400">Creating Amazing Web Experiences</p>
+                      <h3 className="text-2xl font-bold text-white">Robotics Engineer</h3>
+                      <p className="text-gray-400">Creating AI & Robotics Solutions</p>
                     </div>
                   </div>
 
@@ -246,25 +260,25 @@ const AnimatedIntro = () => {
                       <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
                         <Zap className="w-4 h-4 text-blue-400" />
                       </div>
-                      <span className="text-gray-300">React & Next.js Specialist</span>
+                      <span className="text-gray-300">AI Creator (Pyintel Assistant)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                        <Brain className="w-4 h-4 text-purple-400" />
+                        <Lightbulb className="w-4 h-4 text-purple-400" />
                       </div>
-                      <span className="text-gray-300">UI/UX Design Enthusiast</span>
+                      <span className="text-gray-300">Club Founder & Programming Lead</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
-                        <Coffee className="w-4 h-4 text-green-400" />
+                        <Code className="w-4 h-4 text-green-400" />
                       </div>
-                      <span className="text-gray-300">Coffee-Driven Developer</span>
+                      <span className="text-gray-300">Open Source Advocate</span>
                     </div>
                   </div>
 
                   <div className="pt-4 border-t border-white/10">
                     <p className="text-sm text-gray-400 italic">
-                      "Code is not just my profession, it's my passion. Let's create something amazing together!"
+                      &quot;Through empathy and innovation, I believe we can build technology that truly serves humanity.&quot;
                     </p>
                   </div>
                 </div>
@@ -282,13 +296,13 @@ const AnimatedIntro = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="grid grid-cols-2 gap-4"
             >
-              {['React', 'JavaScript', 'Tailwind', 'Node.js'].map((skill, index) => (
+              {skills.map((skill) => (
                 <div
-                  key={skill}
+                  key={skill.name}
                   className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
                 >
-                  <div className="text-lg font-medium text-white">{skill}</div>
-                  <div className="text-sm text-gray-400 mt-1">Expert</div>
+                  <div className="text-lg font-medium text-white">{skill.name}</div>
+                  <div className="text-sm text-gray-400 mt-1">{skill.level}</div>
                 </div>
               ))}
             </motion.div>

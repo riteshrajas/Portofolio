@@ -100,21 +100,114 @@ function a11yProps(index) {
 }
 
 const techStacks = [
+  { icon: "javascript.svg", language: "JavaScript" },
+  { icon: "reactjs.svg", language: "ReactJS" },
+  { icon: "nodejs.svg", language: "Node JS" },
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
   { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
   { icon: "firebase.svg", language: "Firebase" },
+  { icon: "bootstrap.svg", language: "Bootstrap" },
+  { icon: "vite.svg", language: "Vite" },
   { icon: "MUI.svg", language: "Material UI" },
   { icon: "vercel.svg", language: "Vercel" },
   { icon: "SweetAlert.svg", language: "SweetAlert2" },
 ];
 
-// Local certificates data based on your actual certifications
+// Local projects data based on your actual repositories
+const localProjects = [
+  {
+    id: "pyintel-suite",
+    Title: "Pyintel AI Assistant Suite",
+    Description: "A comprehensive AI assistant ecosystem featuring natural language processing, voice recognition, and automation capabilities. Built with Python, TypeScript, and JavaScript.",
+    Img: "/project-images/pyintel.jpg",
+    Link: "https://github.com/riteshrajas/PYINTEL",
+    TechStack: ["Python", "JavaScript", "TypeScript", "AI/ML", "NLP"],
+    featured: true,
+    category: "AI & Machine Learning"
+  },
+  {
+    id: "scout-ops-suite",
+    Title: "Scout-Ops: FRC Scouting Platform",
+    Description: "Complete scouting application suite for FIRST Robotics Competition with Android app, server backend, and Windows application. Multi-platform data collection and analysis.",
+    Img: "/project-images/scout-ops.jpg",
+    Link: "https://github.com/riteshrajas/Scout-Ops-Android",
+    TechStack: ["Kotlin", "Java", "Dart", "JavaScript", "HTML"],
+    featured: true,
+    category: "Robotics & FRC"
+  },
+  {
+    id: "stewie-robot-2024",
+    Title: "STEWIE 2024 - FRC Robot Code",
+    Description: "Competition-ready robot code for Team STEWIE's 2024 FRC season. Features autonomous routines, teleoperated controls, and advanced drivetrain systems.",
+    Img: "/project-images/stewie-robot.jpg",
+    Link: "https://github.com/riteshrajas/STEWIE2024-After-Season",
+    TechStack: ["Java", "Robotics", "FRC", "Control Systems"],
+    featured: true,
+    category: "Robotics & FRC"
+  },
+  {
+    id: "mosimbuilder",
+    Title: "MoSimBuilder - Robot Simulation",
+    Description: "Advanced robot modeling and simulation platform built in C#. Enables virtual testing and validation of robot designs before physical implementation.",
+    Img: "/project-images/mosimbuilder.jpg",
+    Link: "https://github.com/riteshrajas/MoSimBuilder-Stable",
+    TechStack: ["C#", ".NET", "Simulation", "3D Modeling"],
+    featured: false,
+    category: "Robotics & FRC"
+  },
+  {
+    id: "vit-transcription",
+    Title: "VIT - Natural Language Transcriber",
+    Description: "AI-powered transcription application that converts speech to text with high accuracy. Part of the Pyintel ecosystem for voice processing.",
+    Img: "/project-images/vit-transcription.jpg",
+    Link: "https://github.com/riteshrajas/VIT",
+    TechStack: ["Python", "Machine Learning", "Speech Recognition", "NLP"],
+    featured: false,
+    category: "AI & Machine Learning"
+  },
+  {
+    id: "wake-word-detection",
+    Title: "Wake Word Detection Engine",
+    Description: "Custom wake word detection system for voice assistants. Implements machine learning algorithms to recognize specific trigger phrases with low latency.",
+    Img: "/project-images/wake-word.jpg",
+    Link: "https://github.com/riteshrajas/WakeWordDetection",
+    TechStack: ["Python", "Machine Learning", "Audio Processing", "TensorFlow"],
+    featured: false,
+    category: "AI & Machine Learning"
+  },
+  {
+    id: "cs-club-website",
+    Title: "Computer Science Club Website",
+    Description: "Official website for the CS Club I founded at my high school. Features event management, member registration, and educational resources.",
+    Img: "/project-images/cs-club-website.jpg",
+    Link: "https://github.com/riteshrajas/CS-CLUB-WEBSITE",
+    TechStack: ["HTML", "CSS", "JavaScript", "Web Development"],
+    featured: false,
+    category: "Web Development"
+  },
+  {
+    id: "portfolio-website",
+    Title: "Personal Portfolio Website",
+    Description: "This very website! A modern, responsive portfolio showcasing my projects, achievements, and technical skills. Built with React and modern web technologies.",
+    Img: "/project-images/portfolio.jpg",
+    Link: "https://github.com/riteshrajas/Portofolio",
+    TechStack: ["React", "JavaScript", "Tailwind CSS", "Firebase"],
+    featured: false,
+    category: "Web Development"
+  },
+  {
+    id: "robosaurus-rex",
+    Title: "RoboSaurus Rex - Competition Robot",
+    Description: "Advanced robotics project featuring autonomous navigation, sensor integration, and competition-ready design. Developed for robotics competitions.",
+    Img: "/project-images/robosaurus-rex.jpg",
+    Link: "https://github.com/riteshrajas/RoboSaurus_Rex",
+    TechStack: ["Jupyter Notebook", "Python", "Robotics", "Machine Learning"],
+    featured: false,
+    category: "Robotics & FRC"
+  }
+];
+
 const localCertificates = [
   {
     id: "sql-db-2025",
@@ -233,23 +326,32 @@ export default function FullWidthTabs() {
 
       const certificateData = certificateSnapshot.docs.map((doc) => doc.data());
 
-      setProjects(projectData);
+      // Combine Firebase projects with local projects, prioritizing local projects
+      const combinedProjects = [...localProjects, ...projectData];
+      
+      setProjects(combinedProjects);
       setCertificates(certificateData.length > 0 ? certificateData : localCertificates);
 
       // Store in localStorage
-      localStorage.setItem("projects", JSON.stringify(projectData));
+      localStorage.setItem("projects", JSON.stringify(combinedProjects));
       localStorage.setItem("certificates", JSON.stringify(certificateData.length > 0 ? certificateData : localCertificates));
     } catch (error) {
-      console.error("Error fetching data from Firebase, using local certificates:", error);
+      console.error("Error fetching data from Firebase, using local data:", error);
       
       // Fallback to local data if Firebase fails
       const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
       const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
       
-      setProjects(storedProjects);
+      // Use local projects if no stored projects or if stored projects are empty
+      const fallbackProjects = storedProjects.length > 0 ? storedProjects : localProjects;
+      
+      setProjects(fallbackProjects);
       setCertificates(storedCertificates.length > 0 ? storedCertificates : localCertificates);
       
-      // Store local certificates in localStorage if none exist
+      // Store local data in localStorage if none exist
+      if (storedProjects.length === 0) {
+        localStorage.setItem("projects", JSON.stringify(localProjects));
+      }
       if (storedCertificates.length === 0) {
         localStorage.setItem("certificates", JSON.stringify(localCertificates));
       }
@@ -291,8 +393,8 @@ export default function FullWidthTabs() {
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through projects, certifications, and technical expertise. 
-          Each section represents a milestone in my continuous learning path.
+          From Pyintel AI to FRC robotics - explore my journey of innovation, leadership, and technical excellence. 
+          Each project represents my commitment to open-source development and community impact.
         </p>
       </div>
 

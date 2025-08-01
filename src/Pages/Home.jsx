@@ -5,9 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import AnimatedIntro from "../components/AnimatedIntro";
 import TechUniverse from "../components/TechUniverse";
-import GitHubStats from "../components/GitHubStats";
 import GoalsAchievements from "../components/GoalsAchievements";
-import CodingActivity from "../components/CodingActivity";
 import DailyInspiration from "../components/DailyInspiration";
 
 // Memoized Components
@@ -18,7 +16,7 @@ const StatusBadge = memo(() => (
       <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
         <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text sm:text-sm text-[0.7rem] font-medium flex items-center">
           <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
-          Ready to Innovate
+          Ready to Innovate & Inspire
         </span>
       </div>
     </div>
@@ -31,14 +29,14 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Robotics &
+          Robotics &amp;
         </span>
       </span>
       <br />
       <span className="relative inline-block mt-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-          AI Engineer
+           AI Innovator
         </span>
       </span>
     </h1>
@@ -83,12 +81,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["High School Student", "Robotics Enthusiast", "AI & ML Explorer", "FRC Participant", "Cybersecurity Certified", "Mobile App Developer"];
-const TECH_STACK = ["Python", "Java", "JavaScript", "C++", "Flutter", "Dart", "SQL"];
+const WORDS = ["High School Senior", "Robotics Engineer", "AI Creator (Pyintel)", "Club Founder", "Programming Lead", "Gates Scholarship Applicant", "Future Tech Entrepreneur"];
+const TECH_STACK = ["Python", "Java", "JavaScript", "C++", "Electronics", "AI/ML", "Robotics"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/riteshrajas" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/riteshraj/" },
-  { icon: Instagram, link: "https://www.instagram.com/ritesh_raj/" }
+  { icon: Linkedin, link: "https://www.linkedin.com/in/riteshrajas/" },
+  { icon: Instagram, link: "https://www.instagram.com/ritesh_raj_as/" }
 ];
 
 const Home = () => {
@@ -189,7 +187,7 @@ const Home = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  High school senior with a passion for robotics and AI. Creator of Pyintel AI assistant, founder of CS & Engineering clubs, and mentor to aspiring tech students. Building the future through code, compassion, and community impact.
                 </p>
 
                 {/* Tech Stack */}
@@ -249,8 +247,6 @@ const Home = () => {
       {/* New Enhanced Sections */}
       <AnimatedIntro />
       <TechUniverse />
-      <GitHubStats />
-      <CodingActivity />
       <GoalsAchievements />
       <DailyInspiration />
     </div>

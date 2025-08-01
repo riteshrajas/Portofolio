@@ -5,59 +5,59 @@ import { Target, Trophy, Calendar, Zap, CheckCircle, Circle, TrendingUp, Star, A
 const GOALS_2024 = [
   {
     id: 1,
-    title: "Master Advanced React Patterns",
-    description: "Learn React Server Components, Concurrent Features, and Advanced Hooks",
-    progress: 85,
-    status: "in-progress",
-    category: "Skills",
-    icon: Zap,
-    color: "from-blue-500 to-purple-600"
-  },
-  {
-    id: 2,
-    title: "Build 10+ Portfolio Projects",
-    description: "Create diverse projects showcasing different technologies and skills",
-    progress: 70,
+    title: "Launch Pyintel v2",
+    description: "Rebuild and optimize my AI assistant with new features and improved NLP.",
+    progress: 90,
     status: "in-progress",
     category: "Projects",
     icon: Rocket,
-    color: "from-green-500 to-blue-500"
+    color: "from-purple-500 to-indigo-600"
+  },
+  {
+    id: 2,
+    title: "Mentor 10+ Students in Robotics",
+    description: "Teach programming and electronics through workshops and peer mentoring.",
+    progress: 75,
+    status: "in-progress",
+    category: "Community",
+    icon: Zap,
+    color: "from-blue-500 to-cyan-500"
   },
   {
     id: 3,
-    title: "Contribute to Open Source",
-    description: "Make meaningful contributions to popular open source projects",
-    progress: 40,
+    title: "Expand CS & Engineering Clubs",
+    description: "Grow participation and host new STEM outreach events.",
+    progress: 80,
     status: "in-progress",
-    category: "Community",
-    icon: Star,
-    color: "from-yellow-500 to-orange-500"
+    category: "Leadership",
+    icon: TrendingUp,
+    color: "from-green-500 to-blue-500"
   },
   {
     id: 4,
-    title: "Launch Personal Brand",
-    description: "Establish strong online presence and professional network",
-    progress: 90,
+    title: "Win Robotics Programming Award",
+    description: "Lead team to excellence through technical innovation.",
+    progress: 100,
     status: "completed",
-    category: "Career",
+    category: "Achievements",
     icon: Trophy,
-    color: "from-purple-500 to-pink-500"
+    color: "from-yellow-500 to-orange-500"
   },
   {
     id: 5,
-    title: "Master Full-Stack Development",
-    description: "Become proficient in both frontend and backend technologies",
-    progress: 65,
+    title: "Publish a Technical Blog Series",
+    description: "Share tutorials and insights on AI, robotics, and embedded systems.",
+    progress: 60,
     status: "in-progress",
-    category: "Skills",
-    icon: TrendingUp,
-    color: "from-indigo-500 to-purple-500"
+    category: "Career",
+    icon: Star,
+    color: "from-pink-500 to-purple-600"
   },
   {
     id: 6,
-    title: "Build Production-Ready Apps",
-    description: "Deploy scalable applications with proper DevOps practices",
-    progress: 55,
+    title: "Build a Cross-Platform Scouting App",
+    description: "Develop and release a production-ready FRC scouting tool.",
+    progress: 50,
     status: "in-progress",
     category: "Projects",
     icon: Award,
@@ -68,37 +68,40 @@ const GOALS_2024 = [
 const ACHIEVEMENTS = [
   {
     id: 1,
-    title: "First Portfolio Launch",
-    description: "Successfully launched my first professional portfolio website",
-    date: "2024-01-15",
+    title: "Started Engineering Club",
+    description: "Founded the club to expand STEM outreach at my high school.",
+    date: "2025-03-01",
+    icon: TrendingUp,
+    color: "from-green-500 to-blue-500"
+  },
+  {
+    id: 2,
+    title: "Built Pyintel AI",
+    description: "Created a personal AI assistant using NLP and automation features.",
+    date: "2024-03-15",
+    icon: Rocket,
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 3,
+    title: "Won Programming Division Award",
+    description: "Recognized for leading FRC programming efforts.",
+    date: "2024-04-20",
     icon: Trophy,
     color: "from-yellow-500 to-orange-500"
   },
   {
-    id: 2,
-    title: "React Mastery",
-    description: "Completed advanced React course and built 5 complex projects",
-    date: "2024-03-20",
+    id: 4,
+    title: "Published First Blog Post",
+    description: "Wrote and shared a tutorial on embedded systems and robotics.",
+    date: "2024-06-10",
     icon: Star,
     color: "from-blue-500 to-purple-600"
-  },
-  {
-    id: 3,
-    title: "Open Source Contributor",
-    description: "Made first contribution to a popular open source project",
-    date: "2024-05-10",
-    icon: Award,
-    color: "from-green-500 to-blue-500"
-  },
-  {
-    id: 4,
-    title: "Technical Blog Launch",
-    description: "Started writing technical articles and tutorials",
-    date: "2024-06-05",
-    icon: Zap,
-    color: "from-purple-500 to-pink-500"
   }
 ];
+
+
+
 
 const GoalCard = memo(({ goal, delay = 0 }) => {
   const { title, description, progress, status, category, icon: Icon, color } = goal;
@@ -247,7 +250,7 @@ const ProgressOverview = memo(() => {
         </div>
         
         <div className="space-y-2">
-          <h3 className="text-xl font-semibold text-white">2024 Goals Progress</h3>
+          <h3 className="text-xl font-semibold text-white">2025 Goals Progress</h3>
           <p className="text-gray-400">
             {completedGoals} of {totalGoals} goals completed
           </p>
@@ -282,10 +285,10 @@ const GoalsAchievements = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
-            🎯 Goals & Achievements
+            🚀 Goals & Achievements 2025
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Tracking my journey of continuous learning and professional growth
+            From Gates Scholarship to tech entrepreneurship - building &quot;The New World&quot;
           </p>
         </motion.div>
 

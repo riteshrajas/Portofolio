@@ -4,59 +4,61 @@ import { Quote, Sparkles, Heart, Coffee, Code, Target, Zap, Star } from 'lucide-
 
 const INSPIRATIONAL_QUOTES = [
   {
-    quote: "Code is not just my profession, it's my passion. Let's create magic together!",
-    author: "Eki Zulfar Rachman",
-    category: "Passion",
+    quote: "I didn’t grow up with access — I built it, wire by wire, from a busted fan to an AI assistant.",
+    author: "Ritesh Raj",
+    category: "Origin",
+    icon: Sparkles,
+    color: "from-yellow-500 to-orange-600"
+  },
+  {
+    quote: "Leadership isn’t about commanding. It’s about creating space for others to grow.",
+    author: "Ritesh Raj",
+    category: "Empathy",
     icon: Heart,
-    color: "from-red-500 to-pink-500"
+    color: "from-pink-500 to-rose-500"
   },
   {
-    quote: "Every line of code is a step towards building something amazing!",
-    author: "Eki Zulfar Rachman",
-    category: "Progress",
-    icon: Target,
-    color: "from-blue-500 to-purple-500"
+    quote: "My code isn’t just logic. It’s love—for my family, my roots, and the future I’m building.",
+    author: "Ritesh Raj",
+    category: "Purpose",
+    icon: Code,
+    color: "from-blue-500 to-indigo-600"
   },
   {
-    quote: "The best code is not just functional, but also beautiful and meaningful.",
-    author: "Eki Zulfar Rachman",
-    category: "Quality",
+    quote: "They saw a quiet kid. I saw systems, solutions, and silent revolutions waiting to happen.",
+    author: "Ritesh Raj",
+    category: "Vision",
     icon: Star,
-    color: "from-yellow-500 to-orange-500"
+    color: "from-indigo-500 to-purple-700"
   },
   {
-    quote: "Learning never stops. Each day brings new possibilities to grow.",
-    author: "Eki Zulfar Rachman",
-    category: "Growth",
+    quote: "I may not know where I’ll live next year, but I know what I’ll *build* today.",
+    author: "Ritesh Raj",
+    category: "Resilience",
     icon: Zap,
     color: "from-green-500 to-blue-500"
   },
   {
-    quote: "Innovation happens when creativity meets technology.",
-    author: "Eki Zulfar Rachman",
-    category: "Innovation",
-    icon: Code,
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    quote: "Great designs are not just about looks, but about solving real problems.",
-    author: "Eki Zulfar Rachman",
-    category: "Design",
-    icon: Sparkles,
-    color: "from-indigo-500 to-purple-500"
+    quote: "Mentorship isn’t an act. It’s a responsibility — to pass the torch I once wished I had.",
+    author: "Ritesh Raj",
+    category: "Mentorship",
+    icon: Target,
+    color: "from-amber-500 to-red-500"
   }
 ];
 
+
 const DAILY_GOALS = [
-  "🎯 Write clean, maintainable code",
-  "📚 Learn something new every day",
-  "🤝 Help others grow in their journey",
-  "🚀 Push boundaries and innovate",
-  "💡 Solve problems creatively",
-  "🔧 Build tools that make life easier",
-  "🌟 Inspire others through my work",
-  "📱 Create amazing user experiences"
+  "🤖 Guide one student toward building their first robot",
+  "📚 Learn one thing my past self would be proud of",
+  "🌍 Do one thing that makes tomorrow fairer for someone else",
+  "🎯 Make Pyintel one step smarter (even if it’s small)",
+  "🧠 Reflect, not react — especially under pressure",
+  "🧰 Fix what’s broken, inside or outside the machine",
+  "🪞Speak kindly to myself — like I would to a friend",
+  "🚀 Keep building my 'New World', one commit at a time"
 ];
+
 
 const DailyInspiration = () => {
   const [currentQuote, setCurrentQuote] = useState(0);
@@ -144,7 +146,7 @@ const DailyInspiration = () => {
                   </div>
                   <div>
                     <div className="font-medium text-white">— {quote.author}</div>
-                    <div className="text-sm">Frontend Developer</div>
+                    <div className="text-sm">Full Stack Developer</div>
                   </div>
                 </div>
               </div>
@@ -177,7 +179,7 @@ const DailyInspiration = () => {
           <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
               <Target className="w-5 h-5" />
-              Today's Focus
+              Today&apos;s Focus
             </h3>
             
             <motion.div
